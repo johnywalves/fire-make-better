@@ -1,0 +1,8 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  background-color: #ffe9e9;
+}
