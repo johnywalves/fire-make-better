@@ -1,8 +1,21 @@
 .wrapper {
   display: flex;
+  flex-direction: column;
+  background-color: var(--secBg);
+}
+
+h1 {
+  margin: 3rem 5%;
+  text-align: left;
+  font-weight: 400;
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.list {
+  min-height: 15rem;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-
-  background-color: #ffe9e9;
 }

@@ -1,0 +1,25 @@
+main {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  font-size: 1.6rem;
+  background-color: var(--bg);
+}
+
+.left {
+  background-size: cover;
+  background-position: center;
+}
+
+.right {
+  margin: 2rem;
+}
+
+.right h1 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.right h2 {
+  margin: 0.5rem 0;
+  color: var(--primary);
+}

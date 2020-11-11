@@ -1,16 +1,1 @@
 /* Application-wide Styles */
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  box-shadow: .5rem .5rem 1rem 0 #000000;
-}
-
-h1 {
-  color: #c75c5c;
-  padding: 2rem 0;
-  text-align: center;
-  font-size: 2.5rem;
-  margin-left: 1.5rem;
-}

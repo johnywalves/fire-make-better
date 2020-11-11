@@ -1,0 +1,37 @@
+.forehead {
+  height: 50rem;
+  padding: 0 5%;
+  background-color: var(--bg);
+
+  display: grid;
+  grid-template-columns: repeat(2, 49%);
+  row-gap: 4%;
+}
+
+.forehead picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forehead img {
+  width: 75%;
+  height: auto;
+}
+
+.spinner {
+  background-color: var(--bgSec);
+  border: 0.9rem solid var(--bg);
+  border-left-color: var(--primary);
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: calc(50vh - 10rem) auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

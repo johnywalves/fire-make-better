@@ -1,6 +1,10 @@
 <div class="wrapper">
-  <app-recipe-card
-    *ngFor="let recipe of recipes"
-    [recipe]="recipe"
-  ></app-recipe-card>
+  <h1>List of Recipes</h1>
+  <div class="list">
+    <app-recipe-card
+      *ngFor="let recipe of recipes"
+      [recipe]="recipe"
+    >
+    </app-recipe-card>
+  </div>
 </div>

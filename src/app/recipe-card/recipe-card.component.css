@@ -1,24 +1,25 @@
 .wrapper {
-  margin: 1rem 0.5rem;
-  padding: 0.75rem;
+  margin: 1rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 25rem;
-  width: 20rem;
-  box-shadow: 0.25rem 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
-  border-radius: 0.35rem;
+  height: 40rem;
+  width: 30rem;
+  box-shadow: 0.4rem 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.25);
+  border-radius: 0.75rem;
   cursor: pointer;
 
+  background-color: var(--primary);
   background-size: cover;
   background-position: center;
 }
 
 h3 {
-  height: 5rem;
-  margin: 1rem 0;
+  height: 8rem;
+  margin: 1.5rem 0;
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: 2.5rem;
   text-align: left;
   text-shadow: 0.05rem 0.05rem 1rem #000000;
 

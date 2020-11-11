@@ -1,0 +1,36 @@
+<header>
+  <div class="logo">
+    <a href="/">
+      <img src="/assets/flame_64.png" alt="uma chama em um circulo" />
+    </a>
+    <a href="/">
+      <h1>Fire Make Better</h1>
+    </a>
+  </div>
+</header>
+<main>
+  <div
+    class="left"
+    [ngStyle]="{ 'background-image': 'url(' + recipe.image + ')' }"
+  ></div>
+  <div class="right">
+    <h1>{{ recipe.title }}</h1>
+    <div>{{ recipe.readyInMinutes }}</div>
+    <div>{{ recipe.servings }}</div>
+    <h2>Ingredients</h2>
+    <div>
+      <div *ngFor="let ingredient of recipe.extendedIngredients">
+        {{ ingredient.measures.metric.amount | truncate }}{{ ingredient.measures.metric.unitShort }}
+        {{ ingredient.name }}
+      </div>
+    </div>
+    <h2>Steps</h2>
+    <div>
+      <div *ngFor="let instruction of recipe.analyzedInstructions">
+        <div *ngFor="let step of instruction.steps">
+          {{ step.step }}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
