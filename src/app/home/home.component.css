@@ -1,5 +1,7 @@
 .forehead {
+  max-width: 170rem;
   height: 50rem;
+  margin: 0 auto;
   padding: 0 5%;
   background-color: var(--bg);
 
@@ -17,6 +19,44 @@
 .forehead img {
   width: 75%;
   height: auto;
+}
+
+.forehead .explain {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.forehead .explain .logo {
+  justify-content: flex-start;
+}
+
+.forehead .explain .logo img {
+  height: 7rem;
+  width: 7rem;
+}
+
+.forehead .explain .logo h1 {
+  text-align: left;
+  font-size: 6rem;
+  margin: 0 2rem;
+  padding: 0;
+}
+
+.forehead .explain p {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.forehead .explain a {
+  color: var(--primary);
+  transition: font-weight 0.25s;
+}
+
+.forehead .explain a:hover {
+  font-weight: 700;
 }
 
 .spinner {

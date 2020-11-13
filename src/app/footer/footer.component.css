@@ -1,7 +1,16 @@
 p {
+  height: 13rem;
   padding: 5rem;
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   text-align: center;
-  color: var(--primary);
   background-color: var(--secBg);
+}
+
+a {
+  color: var(--primary);
+  transition: font-weight 0.25s;
+}
+
+a:hover {
+  font-weight: 700;
 }

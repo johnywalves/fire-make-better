@@ -9,28 +9,32 @@
   </div>
 </header>
 <main>
-  <div
-    class="left"
-    [ngStyle]="{ 'background-image': 'url(' + recipe.image + ')' }"
-  ></div>
-  <div class="right">
+  <div class="card">
+    <app-recipe-card [recipe]="recipe"></app-recipe-card>
+  </div>
+  <div class="recipe">
     <h1>{{ recipe.title }}</h1>
-    <div>{{ recipe.readyInMinutes }}</div>
-    <div>{{ recipe.servings }}</div>
+    <div class="detail">
+      <p>{{ recipe.readyInMinutes }} minutes</p>
+      <p>{{ recipe.servings }} servings</p>
+    </div>
     <h2>Ingredients</h2>
-    <div>
-      <div *ngFor="let ingredient of recipe.extendedIngredients">
-        {{ ingredient.measures.metric.amount | truncate }}{{ ingredient.measures.metric.unitShort }}
+    <div class="ingredients">
+      <p *ngFor="let ingredient of recipe.extendedIngredients">
+        <span
+          >{{ ingredient.measures.metric.amount | truncate }}
+          {{ ingredient.measures.metric.unitShort }}</span
+        >
         {{ ingredient.name }}
-      </div>
+      </p>
     </div>
     <h2>Steps</h2>
     <div>
-      <div *ngFor="let instruction of recipe.analyzedInstructions">
-        <div *ngFor="let step of instruction.steps">
+      <ol *ngFor="let instruction of recipe.analyzedInstructions">
+        <li *ngFor="let step of instruction.steps">
           {{ step.step }}
-        </div>
-      </div>
+        </li>
+      </ol>
     </div>
   </div>
 </main>
