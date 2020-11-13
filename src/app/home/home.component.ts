@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ResultRecipe, Recipe } from '../recipe';
+
+import { RECIPES } from '../mock-recipes';
 
 @Component({
   selector: 'app-home',
@@ -6,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  recipes: Recipe[];
   search: string = '';
-  loadingSearch: boolean = false;
+  loadingSearch: boolean = true;
   timeoutSearch: number;
+
+  getRecipes = (textSearch: string) => {
+    this.loadingSearch = false;
+    this.http
+      .get<ResultRecipe>(
+        `https://api.spoonacular.com/recipes/complexSearch?query=${textSearch}&number=16&apiKey=eefc0e51bd1e436487d83b260fe4fe86`
+      )
+      .subscribe((data) => {
+        console.log(data.results);
+        return (this.recipes = data.results);
+      });
+  };
 
   gotoTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -38,12 +55,14 @@ export class HomeComponent implements OnInit {
       this.timeoutSearch && clearTimeout(this.timeoutSearch);
 
       this.timeoutSearch = window.setTimeout(() => {
-        this.loadingSearch = false;
+        this.getRecipes(event);
       }, 500);
     }
   };
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getRecipes('pie');
+  }
 }

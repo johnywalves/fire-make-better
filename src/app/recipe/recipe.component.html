@@ -9,10 +9,12 @@
   </div>
 </header>
 <main>
-  <div class="card">
+  <div class="spinner" *ngIf="recipe === undefined"></div>
+  <div class="card" *ngIf="recipe">
     <app-recipe-card [recipe]="recipe"></app-recipe-card>
   </div>
-  <div class="recipe">
+  <div class="spinner" *ngIf="recipe === undefined"></div>
+  <div class="recipe" *ngIf="recipe">
     <h1>{{ recipe.title }}</h1>
     <div class="detail">
       <p>{{ recipe.readyInMinutes }} minutes</p>

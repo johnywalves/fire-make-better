@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AngularTiltModule } from 'angular-tilt';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +24,13 @@ import { TruncatePipe } from './trunc';
     HomeComponent,
     TruncatePipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, AngularTiltModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    AngularTiltModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -69,7 +69,7 @@
     </picture>
   </div>
   <div id="list-result">
-    <app-list-recipes *ngIf="loadingSearch === false"></app-list-recipes>
+    <app-list-recipes *ngIf="loadingSearch === false" [recipes]="recipes"></app-list-recipes>
     <div class="spinner" *ngIf="loadingSearch"></div>
   </div>
 </main>
