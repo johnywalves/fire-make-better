@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularTiltModule } from 'angular-tilt';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +32,7 @@ import { TruncatePipe } from './trunc';
     AngularTiltModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/fire-make-better' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

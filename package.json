@@ -1,12 +1,13 @@
 {
   "name": "fire-make-better",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "deploy": "ng deploy --base-href=/fire-make-better/",
     "e2e": "ng e2e"
   },
   "private": true,

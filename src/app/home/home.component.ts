@@ -21,10 +21,7 @@ export class HomeComponent implements OnInit {
       .get<ResultRecipe>(
         `https://api.spoonacular.com/recipes/complexSearch?query=${textSearch}&number=16&apiKey=eefc0e51bd1e436487d83b260fe4fe86`
       )
-      .subscribe((data) => {
-        console.log(data.results);
-        return (this.recipes = data.results);
-      });
+      .subscribe((data) => (this.recipes = data.results));
   };
 
   gotoTop = () => {

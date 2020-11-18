@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ResultRecipeDetail } from '../recipe';
+import { Component, OnInit, Inject } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+
+import { ResultRecipeDetail } from '../recipe';
 
 @Component({
   selector: 'app-recipe',
@@ -10,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RecipeComponent implements OnInit {
   recipe: ResultRecipeDetail;
+  base_href: string;
 
   getRecipe = (id: string) => {
     this.http
@@ -19,7 +22,9 @@ export class RecipeComponent implements OnInit {
       .subscribe((data) => (this.recipe = data));
   };
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(@Inject(APP_BASE_HREF) private baseHref: string, private http: HttpClient, private route: ActivatedRoute) {
+    this.base_href = this.baseHref;
+  }
 
   ngOnInit(): void {
     this.getRecipe(this.route.snapshot.paramMap.get('recipeId'));
