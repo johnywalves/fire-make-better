@@ -9,34 +9,38 @@
   </div>
 </header>
 <main>
-  <div class="spinner" *ngIf="recipe === undefined"></div>
-  <div class="card" *ngIf="recipe">
-    <app-recipe-card [recipe]="recipe"></app-recipe-card>
+  <div>
+    <div class="spinner" *ngIf="recipe === undefined"></div>
+    <div class="card" *ngIf="recipe">
+      <app-recipe-card [recipe]="recipe"></app-recipe-card>
+    </div>
   </div>
-  <div class="spinner" *ngIf="recipe === undefined"></div>
-  <div class="recipe" *ngIf="recipe">
-    <h1>{{ recipe.title }}</h1>
-    <div class="detail">
-      <p>{{ recipe.readyInMinutes }} minutes</p>
-      <p>{{ recipe.servings }} servings</p>
-    </div>
-    <h2>Ingredients</h2>
-    <div class="ingredients">
-      <p *ngFor="let ingredient of recipe.extendedIngredients">
-        <span
-          >{{ ingredient.measures.metric.amount | truncate }}
-          {{ ingredient.measures.metric.unitShort }}</span
-        >
-        {{ ingredient.name }}
-      </p>
-    </div>
-    <h2>Steps</h2>
-    <div>
-      <ol *ngFor="let instruction of recipe.analyzedInstructions">
-        <li *ngFor="let step of instruction.steps">
-          {{ step.step }}
-        </li>
-      </ol>
+  <div>
+    <div class="spinner" *ngIf="recipe === undefined"></div>
+    <div class="recipe" *ngIf="recipe">
+      <h1>{{ recipe.title }}</h1>
+      <div class="detail">
+        <p>{{ recipe.readyInMinutes }} minutes</p>
+        <p>{{ recipe.servings }} servings</p>
+      </div>
+      <h2>Ingredients</h2>
+      <div class="ingredients">
+        <p *ngFor="let ingredient of recipe.extendedIngredients">
+          <span
+            >{{ ingredient.measures.metric.amount | truncate }}
+            {{ ingredient.measures.metric.unitShort }}</span
+          >
+          {{ ingredient.name }}
+        </p>
+      </div>
+      <h2>Steps</h2>
+      <div>
+        <ol *ngFor="let instruction of recipe.analyzedInstructions">
+          <li *ngFor="let step of instruction.steps">
+            {{ step.step }}
+          </li>
+        </ol>
+      </div>
     </div>
   </div>
 </main>
