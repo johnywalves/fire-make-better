@@ -19,7 +19,22 @@ export class RecipeComponent implements OnInit {
       .get<ResultRecipeDetail>(
         `https://api.spoonacular.com/recipes/${id}/information?apiKey=eefc0e51bd1e436487d83b260fe4fe86`
       )
-      .subscribe((data) => (this.recipe = data));
+      .subscribe(({ extendedIngredients, ...rest }) => (
+        this.recipe = {
+          extendedIngredients: extendedIngredients.map((
+            { measures, ...others }) =>
+          ({
+            measure: measures.metric.amount.toString() +
+              ' ' +
+              measures.metric.unitLong +
+              (measures.metric.unitShort !== measures.metric.unitLong && measures.metric.unitShort ? ' (' + measures.metric.unitShort + ')' : ''),
+            measures,
+            ...others
+          }
+          )),
+          ...rest
+        }
+      ));
   };
 
   constructor(@Inject(APP_BASE_HREF) private baseHref: string, private http: HttpClient, private route: ActivatedRoute) {
