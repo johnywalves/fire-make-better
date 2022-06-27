@@ -27,8 +27,8 @@
       <div class="ingredients">
         <p *ngFor="let ingredient of recipe.extendedIngredients">
           <span
-            >{{ ingredient.measures.metric.amount | truncate }}
-            {{ ingredient.measures.metric.unitShort }}</span
+            >{{ ingredient.measures.metric.amount }}
+            {{ ingredient.measures.metric.unitLong }}</span
           >
           {{ ingredient.name }}
         </p>
